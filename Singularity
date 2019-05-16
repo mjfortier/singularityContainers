@@ -1,10 +1,8 @@
-Boostrap: docker
-From: ubuntu:latest
+Boostrap:docker
+From:ubuntu:latest
 
 %labels
-  CREATOR "Matthew Fortier"
-  PURPOSE "To pass the butter"
-  VERSION 0.0
+  MAINTAINER Matthew Fortier
 
 %post
 mkdir -p /code
