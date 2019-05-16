@@ -1,14 +1,19 @@
-Boostrap:docker
+Bootstrap:docker
 From:ubuntu:latest
 
 %labels
-  MAINTAINER Matthew Fortier
+  CREATOR "Matthew Fortier"
+  PURPOSE "To pass the butter"
+  VERSION 0.0
 
 %post
-mkdir -p /code
-cd /code
-apt update
-apt install vim make libnetcdff-dev git gfortran netcdf-bin nano zlib1g mpich doxygen -y -f -m
+  mkdir -p /testdir
+  cd /testdir
+  apt update
+  apt install vim make git python3 doxygen gedit python3 -y -f -m
+  touch happytime.txt
+  echo "GUESS WHAT TIME IT IS!?" > happytime.txt
 
 %runscript
-cd /code
+  cd /testdir
+  cat happytime.txt
