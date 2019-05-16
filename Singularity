@@ -10,11 +10,10 @@ From: ubuntu:latest
   mkdir -p /testdir
   cd /testdir
   apt update
-  apt install vim make git python3 doxygen gedit -y -f -m
+  sudo apt install vim make git python3 doxygen gedit -y -f -m
   touch happytime.txt
   echo "GUESS WHAT TIME IT IS!?" > happytime.txt
 
 %runscript
   cd /testdir
   cat happytime.txt
-  
