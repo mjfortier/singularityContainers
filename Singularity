@@ -7,13 +7,10 @@ From: ubuntu:latest
   VERSION 0.0
 
 %post
-  mkdir -p /testdir
-  cd /testdir
-  apt update
-  apt install vim make git python3 doxygen gedit -y -f -m
-  touch happytime.txt
-  echo "GUESS WHAT TIME IT IS!?" > happytime.txt
+mkdir -p /code
+cd /code
+apt update
+apt install vim make libnetcdff-dev git gfortran netcdf-bin nano zlib1g mpich doxygen -y -f -m
 
 %runscript
-  cd /testdir
-  cat happytime.txt
+cd /code
