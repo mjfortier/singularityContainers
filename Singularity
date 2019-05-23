@@ -8,19 +8,17 @@ From:ubuntu:latest
 
 %post
   mkdir -p /packages
-  cd /packages
   apt update
-  apt install vim make curl libnetcdff-dev git python3 gfortran netcdf-bin nano zlib1g mpich doxygen gedit python3 -y -f -m
+  apt install vim make curl libnetcdff-dev git python3 gfortran netcdf-bin nano zlib1g mpich doxygen gedit python3 nco -y -f -m
+
+
   curl -o /packages/cdo-1.9.6.tar.gz "https://code.mpimet.mpg.de/attachments/download/19299/cdo-1.9.6.tar.gz"
-  tar -xzvf cdo-1.9.6.tar.gz cdo-1.9.6/
-  rm cdo-1.9.6.tar.gz
-  cd cdo-1.9.6
+  tar -xzvf /packages/cdo-1.9.6.tar.gz /packages/cdo-1.9.6/
+  rm /packages/cdo-1.9.6.tar.gz
+  cd /packages/cdo-1.9.6
   ./configure
   make && make install
-  cd /packages
-  curl -L "https://downloads.sourceforge.net/project/nco/nco-4.8.0.tar.gz" > /packages/nco.tar.gz
-  tar -xzvf /packages/nco.tar.gz
-  rm /packages/nco.tar.gz
 
 
 %runscript
+  cd /packages
