@@ -1,0 +1,15 @@
+Bootstrap:docker
+From:ubuntu:latest
+
+%labels
+  CREATOR Matthew Fortier
+  PURPOSE To provide containerization of CLASSIC functionality
+  VERSION 0.1
+
+%post
+  apt update
+  apt install vim make curl xclip git gfortran nano doxygen gedit python3 nodejs npm -y -f -m
+
+
+%runscript
+  cd /packages

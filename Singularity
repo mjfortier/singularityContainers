@@ -7,11 +7,11 @@ From:ubuntu:latest
   VERSION 0.1
 
 %post
-  mkdir -p /packages
   apt update
   apt install vim make curl libnetcdff-dev git python3 gfortran netcdf-bin nano zlib1g mpich doxygen gedit python3 nco ncview -y -f -m
 
 
+  mkdir -p /packages
   curl -o /packages/cdo-1.9.6.tar.gz "https://code.mpimet.mpg.de/attachments/download/19299/cdo-1.9.6.tar.gz"
   cd /packages
   tar -xzvf cdo-1.9.6.tar.gz cdo-1.9.6/
