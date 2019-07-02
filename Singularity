@@ -19,6 +19,8 @@ From:ubuntu:latest
   cp -R singularityContainers-master/para_netcdf_hdf-4.6.3/* /para_netcdf_hdf-4.6.3/
   cd /para_netcdf_hdf-4.6.3/setup
   ./setup_netcdf.sh
+  cd /para_netcdf_hdf-4.6.3
+  ./dobuild.mpi
   cd /
   chmod 777 -R /para_netcdf_hdf-4.6.3
 
