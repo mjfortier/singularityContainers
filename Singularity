@@ -9,7 +9,7 @@ From:ubuntu:latest
 
 %post
   apt update
-  apt install vim make curl git libnetcdff-dev git python3 gfortran netcdf-bin nano zlib1g mpich doxygen gedit python3 nco ncview libopenmpi-dev -y -f -m
+  apt install vim make curl git libnetcdff-dev git zip unzip python3 gfortran netcdf-bin nano zlib1g mpich doxygen gedit python3 nco ncview libopenmpi-dev -y -f -m
 
 
   mkdir -p /packages
