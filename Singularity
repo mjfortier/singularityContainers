@@ -13,10 +13,14 @@ From:ubuntu:latest
 
 
   mkdir /temp && cd /temp
-  curl -L --output cont.zip https://github.com/mjfortier/singularityContainers/archive/master.zip
+  curl -L --output cont.zip "https://github.com/mjfortier/singularityContainers/archive/master.zip"
   unzip cont.zip
   mkdir -p /para_netcdf_hdf-4.6.3
   cp -R singularityContainers-master/para_netcdf_hdf-4.6.3/* /para_netcdf_hdf-4.6.3/
+  cd /para_netcdf_hdf-4.6.3/setup
+  ./setup_netcdf.sh
+  cd /
+  chmod 777 -R /para_netcdf_hdf-4.6.3
 
   mkdir -p /packages
   curl -o /packages/cdo-1.9.6.tar.gz "https://code.mpimet.mpg.de/attachments/download/19299/cdo-1.9.6.tar.gz"
