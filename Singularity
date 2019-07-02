@@ -6,9 +6,12 @@ From:ubuntu:latest
   PURPOSE To provide containerization of CLASSIC functionality
   VERSION 0.1
 
+%setup
+  cp -R para_netcdf_hdf-4.6.3 $(SINGULARITY_ROOTFS)
+
 %post
   apt update
-  apt install vim make curl libnetcdff-dev git python3 gfortran netcdf-bin nano zlib1g mpich doxygen gedit python3 nco ncview -y -f -m
+  apt install vim make curl libnetcdff-dev git python3 gfortran netcdf-bin nano zlib1g mpich doxygen gedit python3 nco ncview libopenmpi-dev -y -f -m
 
 
   mkdir -p /packages
