@@ -6,12 +6,10 @@ From:ubuntu:latest
   PURPOSE To provide containerization of CLASSIC functionality
   VERSION 0.1
 
-%setup
-  cp -R para_netcdf_hdf-4.6.3 $(SINGULARITY_ROOTFS)
 
 %post
   apt update
-  apt install vim make curl libnetcdff-dev git python3 gfortran netcdf-bin nano zlib1g mpich doxygen gedit python3 nco ncview libopenmpi-dev -y -f -m
+  apt install vim make curl git libnetcdff-dev git python3 gfortran netcdf-bin nano zlib1g mpich doxygen gedit python3 nco ncview libopenmpi-dev -y -f -m
 
 
   mkdir -p /packages
@@ -22,6 +20,11 @@ From:ubuntu:latest
   cd cdo-1.9.6
   ./configure
   make && make install
+
+  mkdir /temp && cd /temp
+  curl -L --output cont.zip https://github.com/mjfortier/singularityContainers/archive/master.zip
+  unzip cont.zip
+  cp -R singularityContainers-master/para_netcdf_hdf-4.6.3 /
 
 
 %runscript
