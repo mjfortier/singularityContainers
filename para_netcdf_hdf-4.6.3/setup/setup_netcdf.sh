@@ -24,12 +24,6 @@ cp --verbose ../setup/netc/dobuildsrc netcdf-c-4.6.3
 cp --verbose ../setup/netf/dobuildsrc netcdf-fortran-4.4.5
 cp --verbose ../setup/zlib/dobuildsrc zlib-1.2.11
 
-for i in zlib-1.2.11 hdf5-1.10.5 netcdf-c-4.6.3 netcdf-fortran-4.4.5
-do
-  cd $i
-  ./configure
-  cd ..
-done
 
 cd ../setup
 cp do* ..

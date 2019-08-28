@@ -16,11 +16,4 @@ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH-${NETCDFDIR}/lib}
 
 make clean
 set -xv
-case "$CCCPARALLEL" in
-    true|TRUE)
-	./configure --prefix=${NETCDFDIR} --enable-fortran --enable-hl --enable-static-exec --enable-parallel && make -j${NUMCORE-8} && make install # && make check
-	;;
-    *)
-	./configure --prefix=${NETCDFDIR} --enable-fortran --enable-hl --enable-static-exec --disable-parallel && make -j${NUMCORE-8} && make install # && make check
-	;;
-esac
+./configure --prefix=${NETCDFDIR} --enable-fortran --enable-hl --enable-static-exec --enable-parallel && make -j${NUMCORE-8} && make check
