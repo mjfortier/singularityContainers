@@ -46,5 +46,5 @@ export PATH=${NETCDFDIR}/bin:${PATH}
 
 for i in zlib-1.2.11 hdf5-1.10.5 netcdf-c-4.6.3 netcdf-fortran-4.4.5
 do
-    (cd src/$i ; time ./dobuildsrc && make install) || break
+    (cd src/$i ; time ./dobuildsrc) || break
 done

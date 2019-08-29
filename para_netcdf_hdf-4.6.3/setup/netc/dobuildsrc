@@ -15,4 +15,4 @@ export LDFLAGS="${LDFLAGS}"
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH-${NETCDFDIR}/lib}
 
 make clean
-./configure --prefix=${NETCDFDIR} --enable-parallel-tests --disable-dap && make -j${NUMCORE-8}  && make check
+./configure --prefix=${NETCDFDIR} --enable-parallel-tests --disable-dap && make -j${NUMCORE-8} && make install

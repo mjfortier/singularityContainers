@@ -16,4 +16,4 @@ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH-${NETCDFDIR}/lib}
 
 make clean
 set -xv
-./configure --prefix=${NETCDFDIR} --enable-fortran --enable-hl --enable-static-exec --enable-parallel && make -j${NUMCORE-8} && make check
+./configure --prefix=${NETCDFDIR} --enable-fortran --enable-hl --enable-static-exec --enable-parallel && make -j${NUMCORE-8} && make install
