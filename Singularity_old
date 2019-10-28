@@ -21,7 +21,7 @@ From:ubuntu:latest
   apt install vim make curl build-essential git libnetcdff-dev git zip unzip python3 m4 gfortran netcdf-bin nano zlib1g mpich doxygen gedit python3 python3-pip nco ncview libopenmpi-dev libgeos-dev libgdal-dev libproj-dev pandoc poppler-utils texlive-latex-base -y -f -m
 
 
-  R --slave -e 'install.packages("amber", repos="cran.rstudio.com")'
+  R --slave -e 'install.packages(c("classInt", "doParallel", "foreach", "latex2exp", "ncdf4", "parallel", "raster", "rgeos", "scico", "sp", "spatial.tools", "stats", "utils", "viridis", "xtable", "knitr", "rmarkdown", "testthat", "devtools"), repos="cran.rstudio.com")'
 
   pip3 install numpy
   pip3 install cython
